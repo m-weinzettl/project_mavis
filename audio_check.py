@@ -31,7 +31,7 @@ def listen():
         return "Fehler: Verbindung zum Erkennungsdienst fehlgeschlagen."
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     speak("Ich bin jetzt online. Was kann ich für dich tun.")
 
     command = listen()

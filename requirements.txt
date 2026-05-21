@@ -2,3 +2,4 @@ numpy~=2.4.6
 nltk~=3.9.4
 SpeechRecognition~=3.16.1
 pyttsx3~=2.99
+tensorflow~=2.21
