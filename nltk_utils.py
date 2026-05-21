@@ -8,16 +8,13 @@ nltk.download('punkt', quiet=True)
 # Wir nutzen den deutschen Stemmer für professionelle Wortstamm-Reduktion
 stemmer = SnowballStemmer("german")
 
-
 def tokenize(sentence):
     """Zerlegt einen Satz in einzelne Wörter (z.B. 'Hallo Mavis' -> ['Hallo', 'Mavis'])"""
     return nltk.word_tokenize(sentence, language='german')
 
-
 def stem(word):
     """Kürzt ein Wort auf seinen Stamm (z.B. 'öffnen', 'öffne', 'öffnet' -> 'öffn')"""
     return stemmer.stem(word.lower())
-
 
 def bag_of_words(tokenized_sentence, all_words):
     """
