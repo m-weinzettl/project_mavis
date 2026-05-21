@@ -5,6 +5,7 @@ import os
 engine = pyttsx3.init()
 
 def speak(text):
+    korrigierter_text = text.replace("Mavis", "Maiwis")
     engine.say(text)
     engine.runAndWait()
 
@@ -19,7 +20,7 @@ def listen():
         recognizer.adjust_for_ambient_noise(source, duration=2)
 
         print("\n=== JETZT ÜBER HEADSET SPRECHEN! ===")
-        audio = recognizer.listen(source, timeout=5, phrase_time_limit=5)
+        audio = recognizer.listen(source, timeout=120, phrase_time_limit=120)
 
     try:
         print("Mavis verarbeitet die Audio-Daten...")

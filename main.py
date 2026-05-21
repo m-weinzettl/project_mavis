@@ -3,6 +3,7 @@ import random
 import os
 import speech_recognition as sr
 import pyttsx3
+import subprocess
 import numpy as np
 import pickle
 import tensorflow as tf
@@ -12,7 +13,8 @@ engine = pyttsx3.init()
 
 
 def speak(text):
-    engine.say(text)
+    corrected_text = text.replace("Mavis", "Maiwis")
+    engine.say(corrected_text)
     engine.runAndWait()
 
 
@@ -24,7 +26,11 @@ def listen():
     with sr.Microphone(device_index=1) as source:
         print("\nMavis hört zu... Befehl sprechen:")
         recognizer.adjust_for_ambient_noise(source, duration=1)
-        audio = recognizer.listen(source, timeout=5, phrase_time_limit=5)
+
+        try:
+            audio = recognizer.listen(source, timeout=120, phrase_time_limit=20)
+        except sr.WaitTimeoutError:
+            return ""
 
     try:
         text = recognizer.recognize_google(audio, language="de-DE")
@@ -48,11 +54,20 @@ tags = data['tags']
 model = tf.keras.models.load_model('model/mavis_model.keras')
 
 if __name__ == "__main__":
-    speak("System online. Ich höre.")
+    speak("Hallo ich bin Mavis. Was kann ich für dich tun.")
 
-    sentence = listen()
-    if sentence != "":
+    while True:
+        sentence = listen()
+
+        if sentence == "":
+            print("Keine Sprache erkannt, starte neuen Versuch...")
+            continue
+
         print(f"Du hast gesagt: {sentence}")
+
+        if "beenden" in sentence.lower():
+            speak("Bis dann.")
+            break
 
         # Text für das Modell vorbereiten
         tokenized_sentence = tokenize(sentence)
@@ -77,10 +92,9 @@ if __name__ == "__main__":
                 if tag == intent['tag']:
                     if tag == "open_notepad":
                         speak(random.choice(intent['responses']))
+                        subprocess.Popen(["editor.exe"])
                         os.system("notepad.exe")
                     else:
                         speak(random.choice(intent['responses']))
         else:
             speak("Das habe ich nicht verstanden. Bitte wiederholen.")
-    else:
-        speak("Ich habe dich nicht gehört.")

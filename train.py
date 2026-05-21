@@ -43,10 +43,19 @@ hidden_size = 8
 output_size = len(tags)
 
 model = Sequential([
+    # LAYER 1 & 2: Eingangsschicht (input_shape) + Erste versteckte Schicht (Dense mit 8 Neuronen)
     Dense(hidden_size, input_shape=(input_size,), activation='relu'),
+
+    # LAYER 3: Erste Ausblendschicht (Dropout schaltet zufällig 20% der Neuronen ab)
     Dropout(0.2),
+
+    # LAYER 4: Zweite versteckte Schicht (Dense mit 8 Neuronen)
     Dense(hidden_size, activation='relu'),
+
+    # LAYER 5: Zweite Ausblendschicht (Dropout schaltet zufällig 20% der Neuronen ab)
     Dropout(0.2),
+
+    # LAYER 6: Ausgangsschicht (Output-Größe entspricht der Anzahl deiner Kategorien/Tags)
     Dense(output_size, activation='softmax')
 ])
 
@@ -60,7 +69,6 @@ print("--- Training gestartet ---")
 model.fit(X_train, y_train, epochs=1000, batch_size=8, verbose=1)
 print("--- Training erfolgreich beendet ---")
 
-# Hier nutzen wir nun das einheitliche, moderne Keras-Format
 model.save('model/mavis_model.keras')
 
 data = {
