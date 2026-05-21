@@ -16,6 +16,7 @@ project_mavis/
 │   └── actions.py          # Systembefehle (Notepad öffnen, Uhrzeit, etc.)
 │
 ├── training.py             # Skript zum Trainieren und Generieren des Modells
-├── main.py                 # Die Hauptdatei, die alles startet (die "Schaltzentrale")
+├── main.py
+├── ntlk_utils.py           # Die Hauptdatei, die alles startet (die "Schaltzentrale")
 │
 └── requirements.txt        # Liste aller installierten Pakete für andere Entwickler
