@@ -1,0 +1,21 @@
+project_mavis/
+│
+├── .venv/                  # Virtuelle Umgebung (Bibliotheken wie TensorFlow, NLTK)
+│
+├── data/                   # Reine Daten- und Wissensdatenbanken
+│   └── intents.json        # Das "Lehrbuch" für die KI
+│
+├── models/                 # Speicherort für trainierte KI-Gehirne
+│   ├── mavis_model.h5      # Das fertige TensorFlow-Modell
+│   └── training_data.pkl   # Gespeicherte Wörter/Tags (all_words, tags)
+│
+├── src/                    # Der eigentliche Quellcode (Source)
+│   ├── __init__.py         # Macht den Ordner als Python-Paket erkennbar
+│   ├── audio.py            # Nur für Stimme & Gehör (speak, listen)
+│   ├── nlp_utils.py        # Textwerkzeuge (tokenize, stem, bag_of_words)
+│   └── actions.py          # Systembefehle (Notepad öffnen, Uhrzeit, etc.)
+│
+├── training.py             # Skript zum Trainieren und Generieren des Modells
+├── main.py                 # Die Hauptdatei, die alles startet (die "Schaltzentrale")
+│
+└── requirements.txt        # Liste aller installierten Pakete für andere Entwickler

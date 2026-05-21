@@ -1,0 +1,61 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hallo mavis",
+        "guten morgen",
+        "hey mavis",
+        "hi mavis",
+        "system online"
+      ],
+      "responses": [
+        "Hallo mein Freund, System online.",
+        "Guten Morgen. Wie kann ich helfen?",
+        "Mavis einsatzbereit. Was gibt es zu tun alter?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "tschüss mavis",
+        "auf wiedersehen",
+        "beende das programm",
+        "mavis schlafengehen",
+        "ciao mavis"
+      ],
+      "responses": [
+        "Auf Wiedersehen, mein Freund.",
+        "Fahre Systeme herunter. Bis bald.",
+        "Mavis geht in den Standby-Modus, Zeit für ein Bier."
+      ]
+    },
+    {
+      "tag": "open_notepad",
+      "patterns": [
+        "öffne editor",
+        "editor starten",
+        "editor öffnen",
+        "schreibprogramm öffnen"
+      ],
+      "responses": [
+        "Ich öffne editor für dich.",
+        "Editor wird gestartet."
+      ]
+    },
+    {
+      "tag": "get_time",
+      "patterns": [
+        "wie spät ist es",
+        "wieviel uhr haben wir",
+        "sag mir die uhrzeit",
+        "uhrzeit bitte",
+        "uhrzeit"
+      ],
+      "responses": [
+        "Es ist jetzt",
+        "Wir haben aktuell"
+      ]
+    }
+  ]
+}
