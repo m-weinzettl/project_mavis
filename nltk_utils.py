@@ -3,7 +3,7 @@ import nltk
 from nltk.stem.snowball import SnowballStemmer
 
 # Lädt die benötigten Punkt-Daten für die Wort-Trennung herunter
-nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # Wir nutzen den deutschen Stemmer für professionelle Wortstamm-Reduktion
 stemmer = SnowballStemmer("german")
