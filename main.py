@@ -36,18 +36,15 @@ def listen():
 
 
 # 1. Daten und gelernte Strukturen laden
-# Hier wurde der Tippfehler im Dateinamen korrigiert (intents statt intetns)
 with open('data/intents.json', 'r', encoding='utf-8') as json_file:
     intents = json.load(json_file)
 
-# Hier wurde der Ordnerpfad korrigiert (model statt models)
 with open('model/training_data.pkl', 'rb') as f:
     data = pickle.load(f)
 
 all_words = data['all_words']
 tags = data['tags']
 
-# Hier wurde das moderne Dateiformat eingetragen, das wir beim Training gespeichert haben
 model = tf.keras.models.load_model('model/mavis_model.keras')
 
 if __name__ == "__main__":
@@ -58,20 +55,21 @@ if __name__ == "__main__":
         print(f"Du hast gesagt: {sentence}")
 
         # Text für das Modell vorbereiten
-        sentence = tokenize(sentence)
-        X = bag_of_words(sentence, all_words)
+        tokenized_sentence = tokenize(sentence)
+        bag = bag_of_words(tokenized_sentence, all_words)
 
-        # Das Modell erwartet eine Matrix (zweidimensionales Array), kein einfaches Array
-        X = np.array([X])
+        # Das Modell erwartet eine Matrix (zweidimensionales Array)
+        input_data = np.array([bag])
 
         # Vorhersage des Modells berechnen
-        output = model.predict(X, verbose=0)
+        output = model.predict(input_data, verbose=0)
         predicted_index = np.argmax(output)
         tag = tags[predicted_index]
 
-        # Wahrscheinlichkeit für die gefundene Kategorie berechnen
-        probabilities = tf.nn.softmax(output)
-        probability = probabilities[0][predicted_index].numpy()
+        # Wahrscheinlichkeit direkt aus der Ausgabe extrahieren
+        probability = output[0][predicted_index]
+
+        print(f"Erkannte Kategorie: {tag} (Sicherheit: {probability * 100:.2f}%)")
 
         # Wenn die Sicherheit über siebzig Prozent liegt, wird die Aktion ausgeführt
         if probability > 0.7:
