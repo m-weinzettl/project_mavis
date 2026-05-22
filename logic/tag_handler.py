@@ -7,7 +7,7 @@ def handle_tag(tag, intent, speak):
         subprocess.Popen(["editor.exe"])
     elif tag == "close_notepad":
         speak(random.choice(intent['responses']))
-        subprocess.Popen(["close.exe"])
+        subprocess.Popen(["close.exe"] or ["kill.exe"] or ["kill.task"])
     elif tag == "get_time":
         speak(random.choice(intent['responses']))
         subprocess.Popen(["time"])

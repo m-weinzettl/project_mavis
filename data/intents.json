@@ -56,6 +56,33 @@
         "Es ist jetzt",
         "Wir haben aktuell"
       ]
+    },
+    {
+      "tag": "open_google",
+      "patterns": [
+        "google",
+        "öffne google",
+        "mach google auf",
+        "internet",
+        "mach bitte google auf"
+      ],
+      "responses": [
+        "Alles klar, hier ist Google",
+        "Hier bitte"
+      ]
+    },{
+      "tag": "open_windows_settings",
+      "patterns": [
+        "windows einstellungen",
+        "öffne windows einstellungen",
+        "einstellungen windows",
+        "einstellungen",
+        "mach einstellungen auf"
+      ],
+      "responses": [
+        "Alles klar, hier die Einstellungen",
+        "Hier bitte"
+      ]
     }
   ]
 }
