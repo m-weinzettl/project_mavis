@@ -5,16 +5,14 @@ import numpy as np
 import pickle
 import tensorflow as tf
 from nltk_utils import tokenize, bag_of_words
-from packages.controller import tag_handler
+from logic import tag_handler
 
 engine = pyttsx3.init()
-
 
 def speak(text):
     corrected_text = text.replace("Mavis", "Maiwis")
     engine.say(corrected_text)
     engine.runAndWait()
-
 
 def listen():
     recognizer = sr.Recognizer()
@@ -38,18 +36,17 @@ def listen():
     except sr.RequestError:
         return ""
 
-
 # 1. Daten und gelernte Strukturen laden
-with open('packages/data/intents.json', 'r', encoding='utf-8') as json_file:
+with open('data/intents.json', 'r', encoding='utf-8') as json_file:
     intents = json.load(json_file)
 
-with open('packages/model/training_data.pkl', 'rb') as f:
+with open('model/training_data.pkl', 'rb') as f:
     data = pickle.load(f)
 
 all_words = data['all_words']
 tags = data['tags']
 
-model = tf.keras.models.load_model('packages/model/mavis_model.keras')
+model = tf.keras.models.load_model('model/mavis_model.keras')
 
 if __name__ == "__main__":
     speak("Hallo ich bin Mavis. Was kann ich für dich tun.")
