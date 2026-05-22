@@ -6,7 +6,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from nltk_utils import tokenize, stem, bag_of_words
 
-with open('data/intents.json', 'r', encoding='utf-8') as f:
+with open('packages/data/intents.json', 'r', encoding='utf-8') as f:
     intents = json.load(f)
 
 all_words = []
@@ -76,7 +76,7 @@ data = {
     "tags": tags
 }
 
-with open("model/training_data.pkl", "wb") as f:
+with open("packages/model/training_data.pkl", "wb") as f:
     pickle.dump(data, f)
 
 print("KI-Gehirn erfolgreich unter 'model/' archiviert!")

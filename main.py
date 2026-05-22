@@ -1,13 +1,11 @@
 import json
-import random
-import os
 import speech_recognition as sr
 import pyttsx3
-import subprocess
 import numpy as np
 import pickle
 import tensorflow as tf
-from nltk_utils import tokenize, stem, bag_of_words
+from nltk_utils import tokenize, bag_of_words
+from packages.controller import tag_handler
 
 engine = pyttsx3.init()
 
@@ -42,16 +40,16 @@ def listen():
 
 
 # 1. Daten und gelernte Strukturen laden
-with open('data/intents.json', 'r', encoding='utf-8') as json_file:
+with open('packages/data/intents.json', 'r', encoding='utf-8') as json_file:
     intents = json.load(json_file)
 
-with open('model/training_data.pkl', 'rb') as f:
+with open('packages/model/training_data.pkl', 'rb') as f:
     data = pickle.load(f)
 
 all_words = data['all_words']
 tags = data['tags']
 
-model = tf.keras.models.load_model('model/mavis_model.keras')
+model = tf.keras.models.load_model('packages/model/mavis_model.keras')
 
 if __name__ == "__main__":
     speak("Hallo ich bin Mavis. Was kann ich für dich tun.")
@@ -90,11 +88,6 @@ if __name__ == "__main__":
         if probability > 0.7:
             for intent in intents['intents']:
                 if tag == intent['tag']:
-                    if tag == "open_notepad":
-                        speak(random.choice(intent['responses']))
-                        subprocess.Popen(["editor.exe"])
-                        os.system("notepad.exe")
-                    else:
-                        speak(random.choice(intent['responses']))
+                    tag_handler.handle_tag(tag, intent, speak)
         else:
             speak("Das habe ich nicht verstanden. Bitte wiederholen.")
