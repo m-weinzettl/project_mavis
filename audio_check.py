@@ -4,6 +4,15 @@ import os
 
 engine = pyttsx3.init()
 
+def list_microphones():
+    mic_list = sr.Microphone.list_microphone_names()
+    print("\n--- Verfügbare Audio-Geräte ---")
+    for index, name in enumerate(mic_list):
+        # Konvertiert den Namen sauber in UTF-8, um Windows-Umlautfehler abzufangen
+        safe_name = name.encode('utf-8', errors='ignore').decode('utf-8')
+        print(f"Index {index}: {safe_name}")
+    print("--------------------------------\n")
+
 def speak(text):
     korrigierter_text = text.replace("Mavis", "Maiwis")
     engine.say(text)
@@ -34,6 +43,7 @@ def listen():
 #test zwecke
 
 #if __name__ == "__main__":
+    list_microphones()
     speak("Ich bin jetzt online. Was kann ich für dich tun.")
 
     command = listen()

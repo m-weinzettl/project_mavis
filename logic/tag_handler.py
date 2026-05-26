@@ -1,16 +1,22 @@
 import random
 import subprocess
+from datetime import datetime
+
 
 def handle_tag(tag, intent, speak):
     if tag == "open_notepad":
         speak(random.choice(intent['responses']))
-        subprocess.Popen(["editor.exe"])
+        subprocess.Popen("editor.exe", shell=True)
+
     elif tag == "close_notepad":
         speak(random.choice(intent['responses']))
-        subprocess.Popen(["close.exe"] or ["kill.exe"] or ["kill.task"])
+        subprocess.Popen("taskkill /f /im editor.exe", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
     elif tag == "get_time":
-        speak(random.choice(intent['responses']))
-        subprocess.Popen(["time"])
+        now = datetime.now().strftime("%H:%M")
+        antwort = random.choice(intent['responses'])
+        speak(f"{antwort} {now} Uhr.")
+
     elif tag == "goodbye":
         speak(random.choice(intent['responses']))
 

@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 import tensorflow as tf
 from nltk_utils import tokenize, bag_of_words
-from logic import tag_handler
+from logic import tag_handler as th
 
 engine = pyttsx3.init()
 
@@ -85,6 +85,6 @@ if __name__ == "__main__":
         if probability > 0.7:
             for intent in intents['intents']:
                 if tag == intent['tag']:
-                    tag_handler.handle_tag(tag, intent, speak)
+                    th.handle_tag(tag, intent, speak)
         else:
             speak("Das habe ich nicht verstanden. Bitte wiederholen.")

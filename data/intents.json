@@ -36,7 +36,8 @@
         "öffne editor",
         "editor starten",
         "editor öffnen",
-        "schreibprogramm öffnen"
+        "schreibprogramm öffnen",
+        "editor"
       ],
       "responses": [
         "Ich öffne editor für dich.",
