@@ -31,6 +31,7 @@ def listen():
     except sr.RequestError:
         return "Fehler: Verbindung zum Erkennungsdienst fehlgeschlagen."
 
+#test zwecke
 
 #if __name__ == "__main__":
     speak("Ich bin jetzt online. Was kann ich für dich tun.")

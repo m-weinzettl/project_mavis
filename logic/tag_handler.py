@@ -16,4 +16,3 @@ def handle_tag(tag, intent, speak):
 
     else:
         speak(random.choice(intent['responses']))
-
