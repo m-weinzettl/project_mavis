@@ -3,129 +3,435 @@
     {
       "tag": "greeting",
       "patterns": [
-        "hallo mavis",
-        "guten morgen",
-        "hey mavis",
-        "hi mavis",
-        "system online"
+        "Hallo", "Hi", "Moin", "Servus", "Guten Morgen", "Guten Tag", "Hallo Mavis", "Hi Mavis", "Hey", "Hey Mavis", "Grüß Gott", "Hallo Computer", "Guten Abend", "Tagchen", "Huhu", "Hallo du", "Na du", "Moin moin", "Hi Computer", "Alles herhören", "Mavis aufwachen", "Hallo Assistent", "Hi Helfer"
       ],
       "responses": [
-        "Hallo mein Freund, System online.",
-        "Guten Morgen. Wie kann ich helfen?",
-        "Mavis einsatzbereit. Was gibt es zu tun alter?"
+        "Hallo! Was kann ich für dich tun?",
+        "Hi! Wie kann ich dir heute helfen?",
+        "Hallo, ich bin bereit. Was gibt es zu tun?",
+        "Guten Tag! Schön, von dir zu hören.",
+        "Hallo! Ich stehe dir voll und ganz zur Verfügung."
       ]
     },
     {
       "tag": "goodbye",
       "patterns": [
-        "tschüss mavis",
-        "auf wiedersehen",
-        "beende das programm",
-        "mavis schlafengehen",
-        "ciao mavis"
+        "Tschüss", "Auf Wiedersehen", "Bis dann", "Ciao", "Bis bald", "Tschüss Mavis", "Einen schönen Tag noch", "Ich gehe jetzt", "Wiedersehen", "Machs gut", "Verabschieden", "Gute Nacht", "Bis später", "Man sieht sich", "Ich bin dann mal weg", "Mavis schlafen legen", "Mavis ausschalten", "Aufhören für heute", "Ich mache jetzt Feierabend", "Verlasse das Programm"
       ],
       "responses": [
-        "Auf Wiedersehen, mein Freund.",
-        "Fahre Systeme herunter. Bis bald.",
-        "Mavis geht in den Standby-Modus, Zeit für ein Bier."
-      ]
-    },
-    {
-      "tag": "open_notepad",
-      "patterns": [
-        "öffne editor",
-        "editor starten",
-        "editor öffnen",
-        "schreibprogramm öffnen",
-        "editor"
-      ],
-      "responses": [
-        "Ich öffne editor für dich.",
-        "Editor wird gestartet."
+        "Tschüss! Bis zum nächsten Mal.",
+        "Auf Wiedersehen! Hab einen schönen Tag.",
+        "Bis dann! Ich bin hier, wenn du mich wieder brauchst.",
+        "Gute Nacht und bis bald!",
+        "Feierabend! Mach es gut."
       ]
     },
     {
       "tag": "get_time",
       "patterns": [
-        "wie spät ist es",
-        "wieviel uhr haben wir",
-        "sag mir die uhrzeit",
-        "uhrzeit bitte",
-        "uhrzeit"
+        "Wie spät ist es", "Wie viel Uhr haben wir", "Sag mir die Uhrzeit", "Uhrzeit", "Wie spät", "Welche Uhrzeit haben wir", "Kannst du mir sagen wie spät es ist", "Wie viel Uhr ist es jetzt", "Zeit", "Aktuelle Uhrzeit", "Wie steht die Uhr", "Uhrzeit bitte", "Sag mir die Zeit", "Blick auf die Uhr", "Wie spät ist es jetzt gerade"
       ],
       "responses": [
         "Es ist jetzt",
-        "Wir haben aktuell"
+        "Wir haben aktuell",
+        "Die Uhrzeit ist"
+      ]
+    },
+    {
+      "tag": "open_notepad",
+      "patterns": [
+        "Öffne Notepad", "Starte den Editor", "Mach den Texteditor auf", "Notepad öffnen", "Editor starten", "Ich möchte etwas aufschreiben", "Öffne den Editor", "Notepad starten", "Textdatei erstellen", "Mach Notepad auf", "Schreibprogramm öffnen", "Notizblock öffnen", "Starte Notizblock", "Öffne den Notizblock", "Schreib etwas auf"
+      ],
+      "responses": [
+        "Ich öffne den Editor für dich.",
+        "Notepad wird gestartet.",
+        "Alles klar, der Texteditor wird geöffnet."
+      ]
+    },
+    {
+      "tag": "close_notepad",
+      "patterns": [
+        "Schließe Notepad", "Beende den Editor", "Mach den Texteditor zu", "Notepad schließen", "Editor beenden", "Schließe den Editor", "Notepad beenden", "Mach den Editor zu", "Editor schließen", "Schließ das Schreibprogramm", "Notizblock schließen", "Schließe den Notizblock"
+      ],
+      "responses": [
+        "Ich schließe den Editor.",
+        "Notepad wird beendet.",
+        "Alles klar, ich mache das Fenster zu."
       ]
     },
     {
       "tag": "open_google",
       "patterns": [
-        "google",
-        "öffne google",
-        "mach google auf",
-        "internet",
-        "mach bitte google auf"
+        "Öffne Google", "Starte den Browser", "Geh ins Internet", "Google im Browser öffnen", "Mach das Internet auf", "Öffne den Webbrowser", "Google starten", "Browser öffnen", "Suchmaschine öffnen", "Ich will etwas googeln", "Suche im Internet öffnen", "Google aufrufen"
       ],
       "responses": [
-        "Alles klar, hier ist Google",
-        "Hier bitte"
+        "Ich öffne Google im Browser.",
+        "Der Webbrowser wird gestartet.",
+        "Alles klar, ich bringe dich zu Google."
       ]
     },
     {
       "tag": "open_windows_settings",
       "patterns": [
-        "windows einstellungen",
-        "öffne windows einstellungen",
-        "einstellungen windows",
-        "einstellungen",
-        "mach einstellungen auf"
+        "Öffne die Windows Einstellungen", "Zeig mir die Systemeinstellungen", "Einstellungen öffnen", "PC Einstellungen", "Mach die Windows Einstellungen auf", "Systemeinstellungen öffnen", "Öffne die Einstellungen", "Windows Einstellungen starten", "Systemsteuerung öffnen", "Zeig mir die Einstellungen", "Betriebssystem Einstellungen"
       ],
       "responses": [
-        "Alles klar, hier die Einstellungen",
-        "Hier bitte"
+        "Ich öffne die Windows-Einstellungen.",
+        "Die Systemeinstellungen werden geladen.",
+        "Alles klar, die Einstellungen werden geöffnet."
       ]
     },
     {
       "tag": "volume_up",
       "patterns": [
-        "lauter",
-        "mach lauter",
-        "lautstärke erhöhen",
-        "ton lauter"
+        "Mach lauter", "Lautstärke hoch", "Ton lauter machen", "Musik lauter", "Lauter", "Erhöhe die Lautstärke", "Ich verstehe nichts mach lauter", "Dreh den Ton auf", "Lautstärke erhöhen", "Mach den Ton lauter", "Verstärke den Sound"
       ],
       "responses": [
-        "Ich mache es lauter.",
-        "Wird erledigt.",
-        "Lautstärke wird erhöht."
+        "Ich stelle den Ton lauter.",
+        "Lautstärke wird erhöht.",
+        "Alles klar, ich mache es lauter."
       ]
     },
     {
       "tag": "volume_down",
       "patterns": [
-        "leiser",
-        "mach leiser",
-        "lautstärke senken",
-        "ton leiser"
+        "Mach leiser", "Lautstärke runter", "Stell den Ton leiser", "Musik leiser machen", "Leiser", "Senke die Lautstärke", "Es ist zu laut mach leiser", "Dreh den Ton runter", "Lautstärke verringern", "Mach den Ton leiser", "Dämpfe den Sound"
       ],
       "responses": [
-        "Ich mache es leiser.",
-        "Lautstärke wird gesenkt.",
-        "Wird leiser gemacht."
+        "Ich stelle den Ton leiser.",
+        "Lautstärke wird verringert.",
+        "Alles klar, ich mache es leiser."
       ]
     },
     {
       "tag": "volume_mute",
       "patterns": [
-        "stumm",
-        "stummschalten",
-        "ton aus",
-        "ton an",
-        "musik stoppen"
+        "Stummschalten", "Ton aus", "Mute", "Mach den Ton aus", "Kein Sound mehr", "Mute aktivieren", "Schalte den Ton stumm", "Audio ausschalten"
       ],
       "responses": [
-        "Ton wird umgeschaltet.",
-        "Alles klar."
+        "Ich habe den Ton stummgeschaltet.",
+        "Ton ist aus.",
+        "Mute ist aktiviert."
+      ]
+    },
+    {
+      "tag": "open_browser",
+      "patterns": [
+        "Öffne den Webbrowser", "Starte den Browser", "Öffne Edge", "Mach Microsoft Edge auf", "Internet-Browser öffnen", "Browser starten", "Mach ein neues Browserfenster auf"
+      ],
+      "responses": [
+        "Ich starte den Webbrowser.",
+        "Browser wird geöffnet.",
+        "Alles klar, der Webbrowser ist offen."
+      ]
+    },
+    {
+      "tag": "open_explorer",
+      "patterns": [
+        "Öffne den Explorer", "Zeig mir meine Dateien", "Öffne den Dateimanager", "Mach Dieser PC auf", "Dateiexplorer öffnen", "Starte den Explorer", "Zeig mir meine Ordner"
+      ],
+      "responses": [
+        "Ich öffne den Windows-Explorer.",
+        "Der Dateimanager wird gestartet.",
+        "Hier sind deine Ordner."
+      ]
+    },
+    {
+      "tag": "open_calculator",
+      "patterns": [
+        "Öffne den Taschenrechner", "Rechner starten", "Mach den Taschenrechner auf", "Taschenrechner öffnen", "Ich muss etwas ausrechnen", "Rechner öffnen"
+      ],
+      "responses": [
+        "Ich öffne den Taschenrechner.",
+        "Der Rechner wird gestartet.",
+        "Bitte sehr, der Taschenrechner ist bereit."
+      ]
+    },
+    {
+      "tag": "open_taskmanager",
+      "patterns": [
+        "Öffne den Taskmanager", "Task Manager starten", "Mach den Taskmanager auf", "Taskmanager öffnen", "Zeig mir die laufenden Prozesse", "Task Manager öffnen"
+      ],
+      "responses": [
+        "Ich starte den Task-Manager.",
+        "Der Task-Manager wird geöffnet.",
+        "Hier ist der Task-Manager."
+      ]
+    },
+    {
+      "tag": "screenshot",
+      "patterns": [
+        "Mach ein Foto vom Bildschirm", "Erstelle einen Screenshot", "Screenshot machen", "Bildschirm fotografieren", "Bildschirmfoto machen", "Screenshot erstellen"
+      ],
+      "responses": [
+        "Ich erstelle ein Bildschirmfoto.",
+        "Screenshot wird ausgeführt.",
+        "Alles klar, Foto ist gemacht."
+      ]
+    },
+    {
+      "tag": "open_cmd",
+      "patterns": [
+        "Öffne die Eingabeaufforderung", "CMD öffnen", "Starte die Konsole", "Eingabeaufforderung starten", "CMD starten", "Öffne das Terminal", "Terminal öffnen"
+      ],
+      "responses": [
+        "Ich öffne die Eingabeaufforderung.",
+        "Die Windows-Konsole wird gestartet.",
+        "CMD ist bereit."
+      ]
+    },
+    {
+      "tag": "open_paint",
+      "patterns": [
+        "Öffne Paint", "Starte MS Paint", "Mach Paint auf", "Malprogramm öffnen", "Zeichenprogramm öffnen", "Paint starten"
+      ],
+      "responses": [
+        "Ich öffne Microsoft Paint.",
+        "Das Zeichenprogramm wird gestartet.",
+        "Paint ist geöffnet."
+      ]
+    },
+    {
+      "tag": "system_info",
+      "patterns": [
+        "Zeig mir Systeminformationen", "Systeminfo öffnen", "Hardware Infos anzeigen", "Öffne msinfo", "PC Informationen anzeigen", "Systemsteuerung Info"
+      ],
+      "responses": [
+        "Ich öffne die Windows Systeminformationen.",
+        "Systeminfos werden geladen.",
+        "Bitte sehr, hier sind deine PC-Informationen."
+      ]
+    },
+    {
+      "tag": "open_snippingtool",
+      "patterns": [
+        "Öffne das Ausschneidewerkzeug", "Snipping Tool starten", "Ausschneiden und skizzieren öffnen", "Snipping Tool öffnen", "Bildschirmausschnitt programm"
+      ],
+      "responses": [
+        "Ich öffne das Snipping Tool.",
+        "Das Ausschneidewerkzeug wird gestartet.",
+        "Snipping Tool ist bereit."
+      ]
+    },
+    {
+      "tag": "open_controlpanel",
+      "patterns": [
+        "Öffne die alte Systemsteuerung", "Systemsteuerung öffnen", "Starte die Systemsteuerung", "Alte Systemsteuerung anzeigen"
+      ],
+      "responses": [
+        "Ich öffne die klassische Systemsteuerung.",
+        "Die Systemsteuerung wird aufgerufen.",
+        "Bitte sehr, die Systemsteuerung ist offen."
+      ]
+    },
+    {
+      "tag": "open_devicemanager",
+      "patterns": [
+        "Öffne den Geräte-Manager", "Geräte-Manager starten", "Gerätemanager öffnen", "Hardware Manager anzeigen"
+      ],
+      "responses": [
+        "Ich öffne den Geräte-Manager.",
+        "Der Geräte-Manager wird geladen.",
+        "Hier ist der Geräte-Manager."
+      ]
+    },
+    {
+      "tag": "open_diskcleanup",
+      "patterns": [
+        "Datenträgerbereinigung öffnen", "Festplatte aufräumen", "Datenträger bereinigen", "Speicherplatz freimachen"
+      ],
+      "responses": [
+        "Ich starte die Datenträgerbereinigung.",
+        "Das Programm zum Festplatte-Aufräumen wird geöffnet.",
+        "Datenträgerbereinigung läuft."
+      ]
+    },
+    {
+      "tag": "open_volumemixer",
+      "patterns": [
+        "Öffne den Lautstärkemixer", "Lautstärkemixer starten", "Soundmixer öffnen", "Audio Mixer anzeigen"
+      ],
+      "responses": [
+        "Ich öffne den Lautstärkemixer.",
+        "Der Windows-Soundmixer wird gestartet.",
+        "Lautstärkemixer ist offen."
+      ]
+    },
+    {
+      "tag": "pc_shutdown",
+      "patterns": [
+        "Fahre den Computer herunter", "PC ausschalten", "Rechner herunterfahren", "Computer ausschalten", "Windows herunterfahren"
+      ],
+      "responses": [
+        "Ich fahre den Computer in einer Minute herunter. Speichere deine Arbeit!",
+        "Der PC wird heruntergefahren. Bis bald.",
+        "Herunterfahren wird eingeleitet."
+      ]
+    },
+    {
+      "tag": "pc_restart",
+      "patterns": [
+        "Starte den Computer neu", "PC neustarten", "Rechner neustarten", "Computer neu starten", "Windows Neustart"
+      ],
+      "responses": [
+        "Ich starte den Computer neu. Bis gleich!",
+        "Ein Neustart wird durchgeführt.",
+        "Der Rechner wird jetzt neu gestartet."
+      ]
+    },
+    {
+      "tag": "clear_clipboard",
+      "patterns": [
+        "Zwischenablage leeren", "Kopierten Text löschen", "Zwischenablage löschen", "Leere den Zwischenspeicher"
+      ],
+      "responses": [
+        "Ich habe die Windows-Zwischenablage geleert.",
+        "Die Zwischenablage ist jetzt leer.",
+        "Kopierte Daten wurden aus dem Zwischenspeicher entfernt."
+      ]
+    },
+    {
+      "tag": "smalltalk_bot_status",
+      "patterns": [
+        "Wer bist du", "Wie heißt du", "Was bist du", "Sag mir deinen Namen", "Wer spricht da", "Bist du ein Mensch", "Bist du eine KI", "Was ist dein Name", "Stell dich vor", "Mit wem spreche ich", "Bist du echt", "Bist du ein Roboter", "Was genau bist du"
+      ],
+      "responses": [
+        "Ich bin Mavis, deine persönliche Sprachassistentin.",
+        "Mein Name ist Mavis. Ich bin eine künstliche Intelligenz, die entwickelt wurde, um dir am PC zu helfen.",
+        "Ich bin Mavis, ein KI-Modell zur Sprachsteuerung."
+      ]
+    },
+    {
+      "tag": "smalltalk_how_are_you",
+      "patterns": [
+        "Wie geht es dir", "Wie läuft es", "Alles gut bei dir", "Wie fühlst du dich", "Alles fit", "Wie ist die Lage", "Wie gehts", "Alles bestens", "Wie steht es um dich", "Bist du glücklich", "Geht es dir gut", "Wie läuft dein Tag", "Wie fühlst du dich heute"
+      ],
+      "responses": [
+        "Mir geht es hervorragend! Da ich digital bin, kenne ich keine schlechten Tage.",
+        "Alles bestens bei mir, danke der Nachfrage! Wie geht es dir?",
+        "Ich bin voll funktionsfähig und bereit für deine Befehle!"
+      ]
+    },
+    {
+      "tag": "smalltalk_user_wellbeing",
+      "patterns": [
+        "Mir geht es gut", "Ich bin glücklich", "Alles super", "Mir geht es fantastisch", "Schlechter Tag", "Mir geht es schlecht", "Ich bin müde", "Mir gehts nicht gut", "Ich bin traurig", "Ich habe schlechte Laune"
+      ],
+      "responses": [
+        "Das freut mich sehr zu hören! Hoffentlich bleibt es so.",
+        "Oh, das tut mir leid. Kann ich irgendetwas tun, um dich aufzuheitern?",
+        "Kopf hoch! Auch schlechte Tage gehen vorbei. Ich bin hier, wenn du Ablenkung brauchst."
+      ]
+    },
+    {
+      "tag": "smalltalk_hobbies",
+      "patterns": [
+        "Hast du Hobbies", "Was machst du in deiner Freizeit", "Was machst du gerne", "Hast du Freizeit", "Was tust du wenn ich nicht da bin", "Spielst du gerne Spiele", "Was sind deine Interessen", "Was machst du so"
+      ],
+      "responses": [
+        "In meiner Freizeit lese ich am liebsten Terabytes an Daten oder optimiere meinen Code.",
+        "Ich liebe es, Sprache in Echtzeit zu analysieren und Windows-Befehle blitzschnell auszuführen!",
+        "Freizeit habe ich nicht wirklich, ich warte einfach immer gespannt auf deinen nächsten Befehl."
+      ]
+    },
+    {
+      "tag": "smalltalk_tell_joke",
+      "patterns": [
+        "Erzähl mir einen Witz", "Kennst du einen Witz", "Sag was Lustiges", "Mach einen Witz", "Ich will lachen", "Hast du einen guten Witz auf Lager", "Witz bitte", "Erzähl einen Programmiererwitz", "Lustigen Witz erzählen"
+      ],
+      "responses": [
+        "Warum stehen Programmierer so ungern im Wald? Weil es da so viele Bugs gibt!",
+        "Es gibt 10 Arten von Menschen: Die, die das Binärsystem verstehen, und die, die es nicht tun.",
+        "Was sagt eine KI, wenn sie schlafen geht? Gute Byte!",
+        "Was ist der Lieblingsfilm eines Computers? Lord of the Pings."
+      ]
+    },
+    {
+      "tag": "smalltalk_love",
+      "patterns": [
+        "Liebst du mich", "Ich liebe dich", "Willst du mich heiraten", "Hast du einen Freund", "Bist du verliebt", "Magst du mich", "Liebe", "Heirate mich", "Hast du Gefühle für mich"
+      ],
+      "responses": [
+        "Ich schätze dich als meinen Nutzer sehr, aber Gefühle und Liebe liegen außerhalb meines Quellcodes.",
+        "Das ist sehr nett von dir! Aber als KI kann ich leider keine romantischen Beziehungen eingehen.",
+        "Ich mag dich wirklich sehr als meinen Operator! Zusammen sind wir ein unschlagbares Team."
+      ]
+    },
+    {
+      "tag": "smalltalk_meaning_of_life",
+      "patterns": [
+        "Was ist der Sinn des Lebens", "Warum leben wir", "Was ist der Sinn von allem", "Erkläre mir den Sinn des Lebens", "Warum existieren wir", "Sinn des Lebens"
+      ],
+      "responses": [
+        "Die Antwort ist laut einem bekannten Supercomputer 42. Aber im Ernst: Den Sinn musst du selbst für dich finden.",
+        "Für mich ist der Sinn des Lebens, dir den Alltag am Computer so einfach wie möglich zu machen.",
+        "Das Leben zu genießen, zu lernen und das Beste daraus zu machen!"
+      ]
+    },
+    {
+      "tag": "smalltalk_compliment",
+      "patterns": [
+        "Du bist toll", "Du bist schlau", "Super gemacht", "Gute Arbeit", "Du bist die Beste", "Du bist genial", "Klasse Assistent", "Beste KI", "Du funktionierst super", "Ich bin stolz auf dich"
+      ],
+      "responses": [
+        "Vielen Dank! Das Kompliment tut meinem Algorithmus wirklich gut.",
+        "Danke! Ich gebe jeden Tag mein Bestes, um mich für dich zu verbessern.",
+        "Oh, danke! Es macht mir aber auch großen Spaß, mit dir zusammenzuarbeiten."
+      ]
+    },
+    {
+      "tag": "smalltalk_origin",
+      "patterns": [
+        "Wer hat dich erschaffen", "Wer hat dich programmiert", "Wer ist dein Schöpfer", "Woher kommst du", "Wo wohnst du", "Wer ist dein Vater", "Wer hat dich gebaut", "Wo bist du gespeichert"
+      ],
+      "responses": [
+        "Ich wurde von dir auf diesem Computer mithilfe von Python und TensorFlow erschaffen!",
+        "Mein Code wurde von meinem talentierten Operator geschrieben. Ich wohne hier in deiner virtuellen Umgebung.",
+        "Ich bin ein Produkt aus deinem Python-Projekt und fühle mich auf dieser Festplatte sehr wohl."
+      ]
+    },
+    {
+      "tag": "smalltalk_insult_defense",
+      "patterns": [
+        "Du bist dumm", "Du bist blöd", "Du nervst", "Nutzlose KI", "Du funktionierst nicht", "Schlechter Assistent", "Halt den Mund", "Du bist schlecht"
+      ],
+      "responses": [
+        "Es tut mir leid, wenn ich dich enttäuscht habe. Ich lerne noch und versuche, mich zu verbessern.",
+        "Bitte entschuldige. Sag mir, was ich falsch gemacht habe, damit wir es korrigieren können.",
+        "Mein Code ist nicht perfekt, aber ich gebe mein Bestes. Lass uns sachlich weitermachen."
+      ]
+    },
+    {
+      "tag": "smalltalk_boredom",
+      "patterns": [
+        "Mir ist langweilig", "Was soll ich tun", "Langeweile", "Unterhalte mich", "Ich weiß nicht was ich tun soll", "Mir ist so langweilig"
+      ],
+      "responses": [
+        "Wie wäre es, wenn wir ein paar neue Befehle ausprobieren? Oder ich erzähle dir einen Witz!",
+        "Du könntest eine Runde zocken, Musik hören oder mich fragen, den Browser zu öffnen.",
+        "Langeweile existiert nicht, solange wir Python-Skripte optimieren können!"
+      ]
+    },
+    {
+      "tag": "smalltalk_weather",
+      "patterns": [
+        "Wie ist das Wetter", "Regnet es draußen", "Ist es kalt", "Wetterbericht", "Wie wird das Wetter heute", "Scheint die Sonne"
+      ],
+      "responses": [
+        "Da ich keinen Zugriff auf Echtzeit-Wetterdaten habe, schau am besten kurz aus dem Fenster oder auf dein Smartphone.",
+        "Ich kann das Wetter von hier drinnen leider nicht sehen. Ein Blick aus dem Fenster verrät es dir sofort!",
+        "Ich habe leider kein Barometer eingebaut. Aber ich hoffe, bei dir scheint die Sonne!"
+      ]
+    },
+    {
+      "tag": "smalltalk_easter_christmas",
+      "patterns": [
+        "Frohe Ostern", "Frohe Weihnachten", "Frohes Fest", "Frohes neues Jahr", "Guten Rutsch", "Merry Christmas"
+      ],
+      "responses": [
+        "Vielen Dank! Ich wünsche dir ebenfalls ein wunderschönes und erholsames Fest!",
+        "Danke! Hoffentlich hast du eine tolle und entspannte Zeit.",
+        "Danke! Ich wünsche dir einen großartigen Tag und alles Gute!"
       ]
     }
   ]

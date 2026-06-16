@@ -15,7 +15,7 @@ recognizer.energy_threshold = 300
 
 
 def speak(text):
-    corrected_text = text.replace("Mavis", "Maiwis")
+    corrected_text = text.replace("Mavis", "Mavis")
     tts = gTTS(text=corrected_text, lang='de')
     filename = "voice.mp3"
     tts.save(filename)
