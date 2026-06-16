@@ -15,7 +15,7 @@ def list_microphones():
 
 def speak(text):
     korrigierter_text = text.replace("Mavis", "Maiwis")
-    engine.say(text)
+    engine.say(korrigierter_text)
     engine.runAndWait()
 
 def listen():
@@ -39,24 +39,3 @@ def listen():
         return "Entschuldigung, das habe ich nicht verstanden."
     except sr.RequestError:
         return "Fehler: Verbindung zum Erkennungsdienst fehlgeschlagen."
-
-#test zwecke
-
-#if __name__ == "__main__":
-    list_microphones()
-    speak("Ich bin jetzt online. Was kann ich für dich tun.")
-
-    command = listen()
-    print(f"Befehl: {command} erhalten.")
-
-    if "notepad" in command or "editor" in command:
-        speak("Ich öffne Notepad.")
-        os.system("notepad.exe")
-    elif "editor" in command:
-        speak("Ich öffne Editor.")
-        os.system("editor.exe")
-    elif command == "":
-        speak("Ich konnte dich nicht verstehen.")
-    else:
-        speak("Ich bin jetzt erhalten.")
-
