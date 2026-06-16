@@ -71,7 +71,8 @@
         "Alles klar, hier ist Google",
         "Hier bitte"
       ]
-    },{
+    },
+    {
       "tag": "open_windows_settings",
       "patterns": [
         "windows einstellungen",
@@ -83,6 +84,48 @@
       "responses": [
         "Alles klar, hier die Einstellungen",
         "Hier bitte"
+      ]
+    },
+    {
+      "tag": "volume_up",
+      "patterns": [
+        "lauter",
+        "mach lauter",
+        "lautstärke erhöhen",
+        "ton lauter"
+      ],
+      "responses": [
+        "Ich mache es lauter.",
+        "Wird erledigt.",
+        "Lautstärke wird erhöht."
+      ]
+    },
+    {
+      "tag": "volume_down",
+      "patterns": [
+        "leiser",
+        "mach leiser",
+        "lautstärke senken",
+        "ton leiser"
+      ],
+      "responses": [
+        "Ich mache es leiser.",
+        "Lautstärke wird gesenkt.",
+        "Wird leiser gemacht."
+      ]
+    },
+    {
+      "tag": "volume_mute",
+      "patterns": [
+        "stumm",
+        "stummschalten",
+        "ton aus",
+        "ton an",
+        "musik stoppen"
+      ],
+      "responses": [
+        "Ton wird umgeschaltet.",
+        "Alles klar."
       ]
     }
   ]
