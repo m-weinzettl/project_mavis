@@ -1,13 +1,18 @@
 import math
 import pygame
+import random
 
 
 def hologram_window(get_state, is_running, set_running):
     pygame.init()
-    screen_width = 400
-    screen_height = 400
-    screen = pygame.display.set_mode((screen_width, screen_height))
-    pygame.display.set_caption("Mavis Hologram Interface")
+
+    info = pygame.display.Info()
+    screen_width = info.current_w
+    screen_height = info.current_h
+
+    flags = pygame.NOFRAME
+    screen = pygame.display.set_mode((screen_width, screen_height), flags)
+    pygame.display.set_caption("Mavis AI Cyberface")
     clock = pygame.time.Clock()
 
     try:
@@ -17,51 +22,64 @@ def hologram_window(get_state, is_running, set_running):
     except Exception:
         pass
 
+    try:
+        face_img = pygame.image.load("images/mavis_face_lisa.jpg")
+        face_img = pygame.transform.smoothscale(face_img, (screen_width, screen_height))
+    except Exception:
+        face_img = None
+
     angle = 0
+    scan_y = 0
+    scan_dir = 1
 
     while is_running():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 set_running(False)
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    set_running(False)
 
-        screen.fill((10, 10, 15))
-        center_x = screen_width // 2
-        center_y = screen_height // 2
-
+        screen.fill((5, 5, 10))
         current_state = get_state()
 
+        if face_img:
+            screen.blit(face_img, (0, 0))
+
         if current_state == "LISTENING":
-            color = (255, 0, 50)
-            dark_color = (60, 0, 10)
-            speed = 0.06
-            amp = 8
+            scan_y += scan_dir * 6
+            if scan_y > screen_height or scan_y < 0:
+                scan_dir *= -1
+            pygame.draw.line(screen, (0, 240, 255), (0, scan_y), (screen_width, scan_y), 3)
+
+            for _ in range(2):
+                line_y = random.randint(0, screen_height)
+                pygame.draw.line(screen, (0, 150, 200), (0, line_y), (screen_width, line_y), 1)
+
         elif current_state == "SPEAKING":
-            color = (0, 255, 100)
-            dark_color = (0, 60, 20)
-            speed = 0.08
-            amp = 12
+            points = []
+            for x in range(0, screen_width, 15):
+                wave = math.sin(x * 0.02 + angle * 5) * random.randint(20, 50)
+                y = int(screen_height * 0.85) + int(wave)
+                points.append((x, y))
+            if len(points) > 1:
+                pygame.draw.lines(screen, (0, 255, 150), False, points, 4)
+
+            for _ in range(15):
+                px = random.randint(0, screen_width)
+                py = random.randint(0, screen_height)
+                pygame.draw.circle(screen, (0, 255, 150), (px, py), random.randint(1, 3))
+
         else:
-            color = (0, 243, 255)
-            dark_color = (0, 50, 60)
-            speed = 0.02
-            amp = 5
+            overlay = pygame.Surface((screen_width, screen_height), pygame.SRCALPHA)
+            pulse_alpha = int(12 + math.sin(angle) * 8)
+            overlay.fill((0, 200, 255, pulse_alpha))
+            screen.blit(overlay, (0, 0))
 
-        pulse = int(math.sin(angle) * amp)
-        base_radius = 80 + pulse
+            for y in range(0, screen_height, 6):
+                pygame.draw.line(screen, (0, 0, 0), (0, y), (screen_width, y), 1)
 
-        pygame.draw.circle(screen, dark_color, (center_x, center_y), base_radius + 20, 2)
-        pygame.draw.circle(screen, color, (center_x, center_y), base_radius, 4)
-        pygame.draw.circle(screen, color, (center_x, center_y), base_radius - 30, 1)
-
-        for i in range(0, 360, 45):
-            rad = math.radians(i + (angle * 5))
-            start_x = center_x + math.cos(rad) * (base_radius - 15)
-            start_y = center_y + math.sin(rad) * (base_radius - 15)
-            end_x = center_x + math.cos(rad) * (base_radius + 5)
-            end_y = center_y + math.sin(rad) * (base_radius + 5)
-            pygame.draw.line(screen, color, (start_x, start_y), (end_x, end_y), 2)
-
-        angle += speed
+        angle += 0.05
         pygame.display.flip()
         clock.tick(60)
 
