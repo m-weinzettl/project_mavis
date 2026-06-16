@@ -9,7 +9,6 @@ def handle_tag(tag, intent, speak):
 
     elif tag == "close_notepad":
         speak(random.choice(intent['responses']))
-        # Korrigiert von editor.exe auf notepad.exe
         subprocess.Popen("taskkill /f /im notepad.exe", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     elif tag == "get_time":
