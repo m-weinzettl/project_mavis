@@ -1,6 +1,7 @@
 import random
 import subprocess
 from datetime import datetime
+import requests
 
 def handle_tag(tag, intent, speak):
     if tag == "open_notepad":
@@ -100,6 +101,19 @@ def handle_tag(tag, intent, speak):
     elif tag == "clear_clipboard":
         speak(random.choice(intent['responses']))
         subprocess.Popen("powershell -Command \"Clear-Clipboard\"", shell=True)
+
+    elif tag == "smalltalk_weather":
+        try:
+            response = requests.get("https://wttr.in/?format=%C;%t", timeout=5)
+            if response.status_code == 200:
+                data = response.text.split(";")
+                condition = data[0].strip()
+                temp = data[1].replace("+", "").strip()
+                speak(f"Das aktuelle Wetter an deinem Standort zeigt: {condition} bei {temp}.")
+            else:
+                speak("Ich konnte keine Verbindung zum Wetterdienst herstellen.")
+        except requests.RequestException:
+            speak("Das Abrufen der Wetterdaten ist fehlgeschlagen.")
 
     elif tag == "goodbye":
         speak(random.choice(intent['responses']))

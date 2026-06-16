@@ -14,6 +14,21 @@
       ]
     },
     {
+      "tag": "list_commands",
+      "patterns": [
+        "Welche Befehle kannst du",
+        "Was kannst du",
+        "Was kann ich dich fragen",
+        "Zeig mir deine Befehle",
+        "Befehlsliste",
+        "Welche Funktionen hast du",
+        "Hilfe"
+      ],
+      "responses": [
+        "Hier ist eine Übersicht meiner Funktionen."
+      ]
+    },
+    {
       "tag": "goodbye",
       "patterns": [
         "Tschüss", "Auf Wiedersehen", "Bis dann", "Ciao", "Bis bald", "Tschüss Mavis", "Einen schönen Tag noch", "Ich gehe jetzt", "Wiedersehen", "Machs gut", "Verabschieden", "Gute Nacht", "Bis später", "Man sieht sich", "Ich bin dann mal weg", "Mavis schlafen legen", "Mavis ausschalten", "Aufhören für heute", "Ich mache jetzt Feierabend", "Verlasse das Programm"
@@ -382,7 +397,7 @@
     {
       "tag": "smalltalk_origin",
       "patterns": [
-        "Wer hat dich erschaffen", "Wer hat dich programmiert", "Wer ist dein Schöpfer", "Woher kommst du", "Wo wohnst du", "Wer ist dein Vater", "Wer hat dich gebaut", "Wo bist du gespeichert"
+        "Wer hat dich erschaffen", "Wer hat dich programmed", "Wer ist dein Schöpfer", "Woher kommst du", "Wo wohnst du", "Wer ist dein Vater", "Wer hat dich gebaut", "Wo bist du gespeichert"
       ],
       "responses": [
         "Ich wurde von dir auf diesem Computer mithilfe von Python und TensorFlow erschaffen!",
@@ -418,9 +433,7 @@
         "Wie ist das Wetter", "Regnet es draußen", "Ist es kalt", "Wetterbericht", "Wie wird das Wetter heute", "Scheint die Sonne"
       ],
       "responses": [
-        "Da ich keinen Zugriff auf Echtzeit-Wetterdaten habe, schau am besten kurz aus dem Fenster oder auf dein Smartphone.",
-        "Ich kann das Wetter von hier drinnen leider nicht sehen. Ein Blick aus dem Fenster verrät es dir sofort!",
-        "Ich habe leider kein Barometer eingebaut. Aber ich hoffe, bei dir scheint die Sonne!"
+        "Ich rufe die aktuellen Wetterdaten ab."
       ]
     },
     {
